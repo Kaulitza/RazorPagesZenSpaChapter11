@@ -1,0 +1,43 @@
+﻿@model RazorPages.Models.Contact
+
+@{
+    ViewData["Title"] = "Service Inquiry Form";
+  }
+@if (ViewBag.Posted == false)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="InquiryForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ServicesID" class="control-label"></label>
+                    <select asp-for="ServicesID" asp-items="@ViewBag.ServicesID" class="form-control"></select>
+                    <span asp-validation-for="ServicesID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ContactEmail" class="control-label"></label>
+                    <input asp-for="ContactEmail" class="form-control">
+                    <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to Home</a>
+    </div>
+}
+else 
+{ 
+    <h1>Welcome @Model.Name, Namaste @DateTime.Now.DayOfWeek</h1>
+    <h2>We will be sending you information on our next business day!</h2>
+}
+

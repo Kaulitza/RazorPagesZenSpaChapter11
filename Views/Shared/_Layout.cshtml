@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RazorPages</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/spa.css" />
+</head>
+<body>
+    <img src="~/Images/zenRocks.jpg" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index:-1;opacity:.5;" alt="zen rocks" />
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Zen Spa</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" asp-area="" asp-controller="Home" asp-action="InquiryForm">Customer Inquiry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Client" asp-action="Index">Client List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light " asp-area="" asp-controller="ClientService" asp-action="Index">Client Service List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light " asp-area="" asp-controller="Service" asp-action="Descriptions">Service Descriptions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Service" asp-action="Index">Spa Service Fees</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light " asp-area="" asp-controller="Contact" asp-action="Index">Client Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+
+            @RenderSection("header", required: false)
+        </main>
+    </div>
+    <footer class="border-top footer text-light bg-dark">
+        <div class="container">
+            &copy; 2020 - Zen Spa - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+    @RenderSection("Styling", required: false)
+</body>
+</html>

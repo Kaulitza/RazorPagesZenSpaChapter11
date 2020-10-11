@@ -1,0 +1,13 @@
+﻿@model RazorPages.Models.Services
+
+<h2>What type of spa service are you interested in?</h2>
+
+<form name="spaServices" method="post">
+    <div class="form-group">
+        <label asp-for="Classification" class="form-label">Select a service from the list:</label>
+        <select style="width:100px;" asp-for="Classification" asp-items="@(new SelectList(ViewBag.Classifications,"Classification","Classification"))"
+                class="form-control"></select>
+    </div>
+    <button type="submit">Submit</button>
+
+</form>
